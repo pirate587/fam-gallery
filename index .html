@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Homepage </title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<style>
+     @media screen and (max-width:480px) {
+            img {
+
+                max-width: 100%;
+            }
+           
+
+           
+            body {
+                font-size: 11px;
+            }
+            
+        }
+        img{
+            border: solid 3px black;
+            border-radius: 30px;
+            max-width: 100%;
+
+        }
+body{
+    
+  font-family: "Satisfy", serif;
+  font-weight: 400;
+  font-style: normal;
+
+
+}
+.imgs
+{
+    height: 300px;
+    width: 100%;
+}
+.items2
+{
+    display: grid;
+   padding: 15px;
+    grid-template-columns: auto auto auto ;
+    
+    
+}
+.items
+{
+    display: grid;
+   padding: 15px;
+    grid-template-columns: auto auto auto ;
+    
+    
+}
+.items1
+{
+ 
+    height: 500px;;
+    
+    width:100%
+
+}
+.fam-gallery
+{
+   display:grid ;
+   grid-template-columns: auto auto auto;
+   grid-template-rows: auto auto auto auto;
+
+
+}
+.border
+{
+    border: 5px solid black;
+}
+
+</style>
+<link href="https://fonts.googleapis.com/css2?family=Autour+One&family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Dancing+Script&family=Libre+Baskerville&family=Lobster&family=Roboto+Mono&family=Satisfy&display=swap" rel="stylesheet">
+</head>
+<body>
+    <center>
+        <h1>HomePage &#9962</h1>
+    
+    <div>
+        <img src="./120.jpg" usemap="#familymap" height="600px"  alt="Myfamily">
+        <map name="familymap">
+            <area shape="rect"  coords="20, 15, 253, 258" alt="father" href="./father.html">
+            <area shape="rect"  coords="293, 15, 448, 258" alt="mee" href="./mee.html">
+            <area shape="rect"  coords="468, 0, 625, 351" alt="mother" href="./mother.html">
+            <area shape="rect"  coords="566, 366, 683, 585" alt="sister" href="./sister.html">
+        </map>
+
+        <script>
+           function resizeMap() {
+        var img = document.querySelector('img');
+        var map = document.querySelector('map');
+        var areas = map.getElementsByTagName('area');
+        var originalWidth = 800; // Original width of the image
+        var originalHeight = 600; // Original height of the image
+        var scaleX = img.offsetWidth / originalWidth;
+        var scaleY = img.offsetHeight / originalHeight;
+
+        for (var i = 0; i < areas.length; i++) {
+            var coords = areas[i].getAttribute('coords').split(',').map(Number);
+            var newCoords = coords.map((coord, index) => {
+                return index % 2 === 0 ? Math.round(coord * scaleX) : Math.round(coord * scaleY);
+            });
+            areas[i].coords = newCoords.join(',');
+        }
+    }
+
+        
+            window.onload = resizeMap;
+            window.onresize = resizeMap;
+        </script>
+         <h1>fam-gallery 🖼️</h1>
+        <div >
+       
+        <div class="fam-gallery ">
+            <div class="items">
+                <img src="./140.jpg" >
+            </div>
+            <div class="items">
+                <img src="./my family.jpg"  >
+            </div>
+            <div class="items">
+                <img src="./my moments.jpg" >
+            </div>
+        </div>
+            <div class="items2">
+               <div class="items1" >
+                   <img src="./IMG_20220831_164250.jpg" >
+                </div>
+               <div class="items2">
+                   <img src="./MKR_8922.JPG" >
+
+                </div>
+               <div class="items2">
+                   <img src="./DSC00153.JPG" >
+                </div>
+        </div>
+        
+    
+</div>
+</body>
+</center>
+</html>
